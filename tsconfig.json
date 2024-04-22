@@ -1,5 +1,17 @@
 {
   "compilerOptions": {
+    "composite": true,
+    "verbatimModuleSyntax": false,
+    /* Bundler mode */
+    "allowImportingTsExtensions": false,
+    "resolveJsonModule": true,
+    "noEmit": true,
+    "allowJs": true,
+    /* Linting */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "isolatedModules": true,
     "target": "esnext",
     "module": "esnext",
     "strict": true,
@@ -11,13 +23,23 @@
     "forceConsistentCasingInFileNames": true,
     "useDefineForClassFields": true,
     "sourceMap": true,
-    "baseUrl": ".",
+    "baseUrl": "./",
     "types": [
-      "webpack-env"
+      "webpack-env",
+      "node"
     ],
     "paths": {
       "@/*": [
-        "src/*"
+        "./src/*"
+      ],
+      "@ui/*": [
+        "./src/ui/*"
+      ],
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@layouts/*": [
+        "./src/layouts/*"
       ]
     },
     "lib": [
@@ -33,6 +55,10 @@
     "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx"
+  ],
+  "extends": [
+    "@vue/tsconfig/tsconfig.dom.json",
+    "@tsconfig/node18/tsconfig.json"
   ],
   "exclude": [
     "node_modules"

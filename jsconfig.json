@@ -6,7 +6,16 @@
     "moduleResolution": "node",
     "paths": {
       "@/*": [
-        "src/*"
+        "./src/*"
+      ],
+      "@ui/*": [
+        "./src/ui/*"
+      ],
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@layouts/*": [
+        "./src/layouts/*"
       ]
     },
     "lib": [

@@ -1,5 +1,6 @@
+import { IProduct } from './types';
 
-const data = [
+const data: IProduct[] = [
     {
         id: 0,
         name: 'aircraft',
@@ -66,7 +67,7 @@ const data = [
             }
         ]
     },
-]
+];
 
 export default data;
 
