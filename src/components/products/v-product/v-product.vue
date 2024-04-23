@@ -1,13 +1,15 @@
 <template>
   <v-flex v-if="product" column padding="20" gap="20">
-    <v-text as="h3" class="v-product__title" weight="bold">{{ product.name }}</v-text>
+    <v-text as="h3" class="v-product__title" weight="bold">
+      {{ product.name }}
+    </v-text>
 
     <v-product-attributes :product-id="productId"/>
 
     <v-flex gap="5" align="center">
       <v-text>type</v-text>
 
-      <v-flex gap="10">
+      <v-flex gap="10" align="center">
         <v-select :options="ATTRIBUTE_OPTIONS" v-model="selectedAttributeType"/>
 
         <v-text :as="VButton" @click="addAttribute">

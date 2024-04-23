@@ -1,19 +1,22 @@
 <template>
-  <v-flex column class="v-tabs">
-    <v-text
-        :as="VButton"
+  <v-flex column class="v-tabs" as="ul">
+    <li
         v-for="tab in tabs"
-        align="left"
         :key="tab.id"
-        :color="tab.id === activeTabProxy ? 'light-blue' : 'transparent'"
-        @click="activeTabProxy = tab.id"
-        font-size="20"
-        weight="bold"
-        class="v-tabs__button"
-        variant="empty"
     >
-      {{ tab.name }}
-    </v-text>
+      <v-text
+          :as="VButton"
+          :color="tab.id === activeTabProxy ? 'light-blue' : 'transparent'"
+          class="v-tabs__button"
+          align="left"
+          font-size="20"
+          weight="bold"
+          variant="empty"
+          @click="activeTabProxy = tab.id"
+      >
+        {{ tab.name }}
+      </v-text>
+    </li>
   </v-flex>
 </template>
 
@@ -27,7 +30,7 @@ import VText from '@ui/v-text/v-text.vue';
 import VFlex from '@ui/v-flex/v-flex.vue';
 
 const props = defineProps<{
-  tabs: TTab[];
+  tabs: Iterable<TTab>;
   modelValue?: TTab['id'] | null;
 }>();
 const emit = defineEmits<{

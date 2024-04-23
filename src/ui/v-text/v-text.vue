@@ -1,5 +1,5 @@
 <template>
-  <component :is="as" v-bind="$attrs" class="v-text">
+  <component :is="as" class="v-text">
     <slot/>
   </component>
 </template>

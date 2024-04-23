@@ -6,16 +6,15 @@
     --v-button-background: none;
   }
 
-  &:not(&--default):hover {
-    --v-button-background: #f0f0ff;
-  }
-
   &--light-blue {
     --v-button-background: lightskyblue;
   }
 
-
   &:not(&--default) {
+    &:hover {
+      --v-button-background: #f0f0ff;
+    }
+
     background-color: var(--v-button-background, transparent);
   }
 }

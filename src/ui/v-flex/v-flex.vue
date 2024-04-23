@@ -14,10 +14,10 @@ const props = withDefaults(defineProps<{
   align?: CSSProperties['alignItems'];
   justify?: CSSProperties['justifyContent'];
   column?: boolean;
+  wrap?: boolean;
   gap?: string | number;
   padding?: string | number;
   margin?: string | number;
-  wrap?: boolean;
 }>(), {
   as: 'div'
 });

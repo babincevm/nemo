@@ -1,34 +1,42 @@
 <template>
-  <v-flex gap="20" margin="0" column class="v-product-attributes">
-    <v-flex padding="10" column gap="10" margin="0" v-for="(attr, index) in product.attributes" :key="index">
+  <v-flex as="ul" gap="20" margin="0" column class="v-product-attributes">
+    <v-flex
+        v-for="(attr, index) in product.attributes"
+        :key="index"
+        as="li"
+        padding="10"
+        column
+        gap="10"
+        margin="0"
+    >
       <v-input v-model="attr.code" label="code:"/>
       <v-input v-model="attr.name" label="name:"/>
 
       <v-input v-if="isIColor(attr)" v-model="attr.color" label="color:"/>
 
-      <v-flex gap="5" v-if="isISize(attr)">
+      <v-flex v-else-if="isISize(attr)" gap="5">
         <v-text weight="bold">size:</v-text>
         <v-flex align="center" gap="5">
           <v-input
               :model-value="String(attr.size.width)"
-              @update:model-value="attr.size.width = Number($event)"
               type="number"
+              @update:model-value="attr.size.width = Number($event)"
           />
           x
           <v-input
               :model-value="String(attr.size.height)"
-              @update:model-value="attr.size.height = Number($event)"
               type="number"
+              @update:model-value="attr.size.height = Number($event)"
           />
         </v-flex>
       </v-flex>
 
       <v-input
-          v-if="isIWeight(attr)"
+          v-else-if="isIWeight(attr)"
           :model-value="String(attr.weight)"
-          @update:model-value="attr.weight = Number($event)"
           label="weight:"
           type="number"
+          @update:model-value="attr.weight = Number($event)"
       />
     </v-flex>
   </v-flex>

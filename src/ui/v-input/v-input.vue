@@ -1,6 +1,6 @@
 <template>
-  <v-flex gap="5" class="v-input">
-    <v-text as="label" weight="bold" :for="id" v-if="label">{{ label }}</v-text>
+  <v-flex gap="5">
+    <v-text v-if="label" :for="id" as="label" weight="bold">{{ label }}</v-text>
     <input :id="id" v-model="modelValueProxy" :type="type"/>
   </v-flex>
 </template>

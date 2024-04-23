@@ -1,5 +1,5 @@
 <template>
-  <v-text as="label" :for="id" v-if="label">
+  <v-text v-if="label" :for="id" as="label">
     {{ label }}
   </v-text>
   <select :id="id" v-model="modelValueProxy">
